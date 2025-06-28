@@ -16,6 +16,16 @@ export function ProjectsSection() {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  // Define custom display names for categories
+  const categoryDisplayNames = {
+    'all': 'All Projects',
+    'academic': 'Academic Projects',
+    'research': 'Research Work',
+    'mobile': 'Mobile Apps',
+    'web': 'Web Applications',
+    'professional': 'Professional Work'
+  };
+  
   const categories = ['all', ...new Set(projects.map(project => project.category))];
 
   return (
@@ -47,7 +57,7 @@ export function ProjectsSection() {
                   : 'bg-gray-100 dark:bg-dark-300 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-400'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {categoryDisplayNames[category as keyof typeof categoryDisplayNames] || category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
           ))}
         </div>
@@ -67,6 +77,18 @@ export function ProjectsSection() {
             >
               {/* Project Image */}
               <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-dark-400">
+                {project.category === 'academic' && project.id <= 4 && (
+                  <div className="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 z-10">
+                    {project.id === 1 ? '1st Year' : 
+                     project.id === 2 ? '2nd Year' : 
+                     project.id === 3 ? '3rd Year' : '4th Year'}
+                  </div>
+                )}
+                {project.category === 'research' && (
+                  <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 z-10">
+                    2024 - Present
+                  </div>
+                )}
                 <Image
                   src={project.imageUrl}
                   alt={project.title}

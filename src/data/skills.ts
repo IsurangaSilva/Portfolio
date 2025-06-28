@@ -12,47 +12,46 @@ export interface SkillCategory {
 export const skills: SkillCategory[] = [
   {
     name: 'Frontend',
-    items: ['React', 'Next.js', 'Vue.js', 'Angular', 'Tailwind CSS', 'SASS', 'TypeScript'],
+    items: ['React', 'Next.js', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap'],
     advanced: [
-      { name: 'React.js', level: 95 },
-      { name: 'Next.js', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'CSS/Tailwind', level: 90 }
+      { name: 'React.js', level: 85 },
+      { name: 'Next.js', level: 80 },
+      { name: 'JavaScript', level: 85 },
+      { name: 'CSS/Tailwind', level: 80 }
     ]
   },
   {
     name: 'Backend',
-    items: ['Node.js', 'Express', 'Python', 'Django', 'PHP', 'Laravel', 'GraphQL'],
+    items: ['Node.js', 'Express.js', 'Java', 'C#', '.NET', 'RESTful APIs', 'PHP'],
     advanced: [
-      { name: 'Node.js', level: 88 },
-      { name: 'Express.js', level: 85 },
-      { name: 'GraphQL', level: 80 },
-      { name: 'RESTful APIs', level: 92 }
+      { name: 'Node.js', level: 80 },
+      { name: 'Express.js', level: 75 },
+      { name: 'RESTful APIs', level: 80 },
+      { name: 'Java', level: 70 }
     ]
   },
   {
     name: 'Databases',
-    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase'],
+    items: ['MongoDB', 'MySQL', 'Firebase', 'SQL Server', 'NoSQL'],
     advanced: [
-      { name: 'MongoDB', level: 90 },
-      { name: 'PostgreSQL', level: 82 }
+      { name: 'MongoDB', level: 80 },
+      { name: 'MySQL', level: 75 }
     ]
   },
   {
-    name: 'DevOps',
-    items: ['Docker', 'AWS', 'Vercel', 'CI/CD', 'Git', 'GitHub Actions'],
+    name: 'Mobile Development',
+    items: ['React Native', 'Flutter', 'Android Studio', 'Expo'],
     advanced: [
-      { name: 'Git/GitHub', level: 95 },
-      { name: 'Docker', level: 78 },
-      { name: 'Vercel/Netlify', level: 88 }
+      { name: 'React Native', level: 70 },
+      { name: 'Flutter', level: 65 }
     ]
   },
   {
     name: 'Tools',
-    items: ['VS Code', 'Figma', 'Adobe XD', 'Jira', 'Notion'],
+    items: ['VS Code', 'Git', 'GitHub', 'Azure DevOps', 'Postman', 'Figma', 'Arduino IDE'],
   },
   {
-    name: 'Other Skills',
-    items: ['Responsive Design', 'SEO', 'Accessibility', 'Performance Optimization', 'WebSockets'],
+    name: 'Languages',
+    items: ['English', 'Sinhala', 'Tamil (Basic)'],
   }
 ];

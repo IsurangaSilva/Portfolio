@@ -18,96 +18,105 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with product listings, shopping cart, and secure checkout process.',
-    category: 'web',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB'],
-    github: 'https://github.com/isuranga/ecommerce-platform',
-    demoUrl: 'https://ecommerce-demo.isuranga.com',
+    title: 'Home Land Management System',
+    description: 'A comprehensive system developed during my first year of studies for managing home property listings and transactions.',
+    category: 'academic',
+    technologies: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
+    github: 'https://github.com/IsurangaSilva/homeland-management',
     imageUrl: '/images/projects/ecommerce.svg',
     stats: [
-      { label: 'Performance', value: 95 },
-      { label: 'Accessibility', value: 92 },
-      { label: 'SEO', value: 98 },
-      { label: 'Best Practices', value: 94 }
+      { label: 'User Experience', value: 85 },
+      { label: 'Database Design', value: 80 },
+      { label: 'Implementation', value: 88 },
+      { label: 'Documentation', value: 90 }
     ]
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with drag and drop functionality and real-time updates.',
-    category: 'web',
-    technologies: ['React', 'Node.js', 'Express', 'Socket.io', 'PostgreSQL'],
-    github: 'https://github.com/isuranga/task-manager',
-    demoUrl: 'https://task-app.isuranga.com',
+    title: 'Online Shopping System',
+    description: 'A feature-rich e-commerce platform developed during my second year, implementing MVC architecture principles using Java.',
+    category: 'academic',
+    technologies: ['Java', 'MVC Architecture', 'MySQL', 'JSP', 'Servlets'],
+    github: 'https://github.com/IsurangaSilva/online-shopping',
     imageUrl: '/images/projects/task-management.svg',
     stats: [
-      { label: 'Performance', value: 90 },
-      { label: 'Accessibility', value: 85 },
-      { label: 'SEO', value: 88 },
-      { label: 'Best Practices', value: 92 }
+      { label: 'Architecture', value: 92 },
+      { label: 'UI/UX', value: 85 },
+      { label: 'Code Quality', value: 88 },
+      { label: 'Performance', value: 86 }
     ]
   },
   {
     id: 3,
-    title: 'Health & Fitness Tracker',
-    description: 'A mobile application for tracking workouts, nutrition, and health metrics with data visualization.',
-    category: 'mobile',
-    technologies: ['React Native', 'Redux', 'Firebase', 'Chart.js'],
-    github: 'https://github.com/isuranga/fitness-tracker',
+    title: 'Garbage Management System',
+    description: 'A third-year project focused on optimizing waste collection and management using the MERN stack.',
+    category: 'academic',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'JavaScript'],
+    github: 'https://github.com/IsurangaSilva/garbage-management',
     imageUrl: '/images/projects/fitness-tracker.svg',
     stats: [
-      { label: 'Performance', value: 88 },
-      { label: 'User Satisfaction', value: 94 },
-      { label: 'App Store Rating', value: 4.7 },
-      { label: 'Daily Active Users', value: 2500 }
+      { label: 'Innovation', value: 90 },
+      { label: 'Scalability', value: 85 },
+      { label: 'Implementation', value: 92 },
+      { label: 'User Adoption', value: 88 }
     ]
   },
   {
     id: 4,
-    title: 'Smart Home Dashboard',
-    description: 'An IoT dashboard for monitoring and controlling smart home devices with real-time status updates.',
-    category: 'iot',
-    technologies: ['Vue.js', 'Node.js', 'MQTT', 'WebSockets', 'Docker'],
-    github: 'https://github.com/isuranga/smart-home',
-    demoUrl: 'https://smarthome.isuranga.com',
+    title: 'Online Travel Planning System',
+    description: 'A comprehensive travel planning platform built with the MERN stack for my 4th year project, allowing users to plan trips, book accommodations, and discover destinations.',
+    category: 'academic',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Redux'],
+    github: 'https://github.com/IsurangaSilva/travel-planner',
     imageUrl: '/images/projects/smart-home.svg',
     stats: [
-      { label: 'Response Time', value: 120 },
-      { label: 'Reliability', value: 99.9 },
-      { label: 'Device Support', value: 50 },
-      { label: 'User Satisfaction', value: 92 }
+      { label: 'Feature Completeness', value: 94 },
+      { label: 'User Experience', value: 90 },
+      { label: 'Code Architecture', value: 88 },
+      { label: 'Performance', value: 92 }
     ]
   },
   {
     id: 5,
-    title: 'AI Content Generator',
-    description: 'A web application that leverages AI to generate custom content for marketing and social media.',
-    category: 'ai',
-    technologies: ['Python', 'Flask', 'TensorFlow', 'React', 'AWS'],
-    github: 'https://github.com/isuranga/ai-content-gen',
-    demoUrl: 'https://ai-content.isuranga.com',
+    title: 'Advancements in Digital Healthcare Technologies',
+    description: 'An ongoing research project (2024-Present) focused on investigating and developing cutting-edge digital healthcare solutions, including a voice companion using large language models.',
+    category: 'research',
+    technologies: ['AI/ML', 'Large Language Models', 'Healthcare Analytics', 'Voice Technology'],
     imageUrl: '/images/projects/ecommerce.svg',
     stats: [
-      { label: 'Accuracy', value: 89 },
-      { label: 'Generation Speed', value: 3.2 },
-      { label: 'User Retention', value: 78 },
-      { label: 'Cost Efficiency', value: 85 }
+      { label: 'Research Impact', value: 89 },
+      { label: 'Innovation', value: 95 },
+      { label: 'Technical Implementation', value: 87 },
+      { label: 'Practical Applications', value: 92 }
     ]
   },
   {
     id: 6,
-    title: 'Personal Finance Manager',
-    description: 'A comprehensive finance management tool with budget planning, expense tracking, and financial insights.',
-    category: 'web',
-    technologies: ['Angular', 'TypeScript', 'Node.js', 'MongoDB', 'D3.js'],
-    github: 'https://github.com/isuranga/finance-manager',
+    title: 'Job Management Mobile Application',
+    description: 'A mobile application for managing job listings, applications, and recruitment processes, built with native Android technologies.',
+    category: 'mobile',
+    technologies: ['Kotlin', 'Firebase', 'Android Studio', 'Material Design'],
+    github: 'https://github.com/IsurangaSilva/job-manager-app',
     imageUrl: '/images/projects/task-management.svg',
     stats: [
-      { label: 'Data Accuracy', value: 99.9 },
-      { label: 'Feature Satisfaction', value: 88 },
-      { label: 'Performance', value: 92 },
-      { label: 'Security Rating', value: 95 }
+      { label: 'App Performance', value: 93 },
+      { label: 'User Interface', value: 90 },
+      { label: 'Backend Integration', value: 88 },
+      { label: 'Mobile Responsiveness', value: 95 }
+    ]
+  },
+  {
+    id: 7,
+    title: 'E-commerce Delivery System',
+    description: 'A professional project developed during my time at Ewis Company to streamline the delivery process for online orders.',
+    category: 'professional',
+    technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Azure DevOps'],
+    imageUrl: '/images/projects/ecommerce.svg',
+    stats: [
+      { label: 'Production Code Quality', value: 90 },
+      { label: 'Performance', value: 88 },
+      { label: 'API Integration', value: 92 },
+      { label: 'Team Collaboration', value: 85 }
     ]
   },
 ];

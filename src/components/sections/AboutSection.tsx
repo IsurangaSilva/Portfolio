@@ -6,11 +6,11 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export function AboutSection() {
   const highlights = [
-    '5+ years of web development experience',
+    'MERN Stack development expertise',
     'Specializing in React and Next.js',
     'Full-stack development capabilities',
     'Strong focus on responsive design',
-    'Passionate about user experience',
+    'Research experience in web technologies',
   ];
 
   return (
@@ -76,15 +76,15 @@ export function AboutSection() {
             </h3>
             
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              I am Isuranga, a passionate web developer with over 5 years of experience in creating modern, 
-              responsive websites and web applications. I specialize in building seamless user experiences 
-              with the latest technologies and frameworks.
+              I am Isuranga, a passionate web developer currently pursuing my Bachelor's degree in Information Technology 
+              at Sri Lanka Institute of Information Technology. I specialize in building responsive web applications 
+              using modern technologies like React, Next.js, and the MERN stack.
             </p>
             
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              My journey in web development started with a deep curiosity for how things work on the web. 
-              Since then, I've worked on various projects, from small business websites to complex 
-              enterprise applications, always focusing on delivering high-quality solutions.
+              My journey in web development began during my studies, and I've strengthened my skills through professional experience 
+              at Ewis Company where I worked on real-world applications. I'm particularly interested in creating 
+              user-friendly interfaces and robust backend systems that deliver seamless experiences.
             </p>
 
             <ul className="space-y-3 mb-8">

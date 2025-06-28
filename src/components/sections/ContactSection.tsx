@@ -105,10 +105,10 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-medium text-lg">Phone</h4>
                   <a 
-                    href="tel:+1234567890" 
+                    href="tel:+94785575691" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition"
                   >
-                    078 577 5691
+                    078 557 5691
                   </a>
                 </div>
               </div>
@@ -118,9 +118,9 @@ export function ContactSection() {
                   <MapPinIcon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg">Location</h4>
+                  <h4 className="font-medium text-lg">Address</h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Negombo , Sri Lanka
+                    575/5A 3rd Kurana, Negombo, Sri Lanka
                   </p>
                 </div>
               </div>
@@ -233,6 +233,53 @@ export function ContactSection() {
                 </motion.div>
               )}
             </form>
+          </motion.div>
+        </div>
+
+        {/* References Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mt-24 mb-12"
+        >
+          <h2 className="heading-2 mb-4">References</h2>
+          <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            Professional references available upon request
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
+          >
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Mr. Thusithanjana Thilakarathne</h3>
+            <p className="text-primary-600 dark:text-primary-400 font-semibold mb-2">LIC ( SLIIT ) - App Development</p>
+            <div className="space-y-2 mt-4 text-gray-600 dark:text-gray-400">
+              <p>Phone: + 94 11 754 3999</p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
+          >
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Prof. Koliya Pulasinghe</h3>
+            <p className="text-primary-600 dark:text-primary-400 font-semibold mb-2">Senior Professor</p>
+            <div className="space-y-2 mt-4 text-gray-600 dark:text-gray-400">
+              <p>Faculty Of Computing Information Technology</p>
+              <p>Phone: + 94 11 754 4105</p>
+              <p>Email: koliya.p@sliit.lk</p>
+            </div>
           </motion.div>
         </div>
       </div>

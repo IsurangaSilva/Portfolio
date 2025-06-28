@@ -64,9 +64,9 @@ export function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-2xl font-bold mb-4">Advanced Proficiencies</h2>
+          <h2 className="text-2xl font-bold mb-4">Technical Proficiencies</h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Technologies I've mastered through extensive experience
+            Technologies I've learned and applied in my projects
           </p>
         </motion.div>
 
@@ -151,6 +151,42 @@ export function SkillsSection() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">WEB DESIGN CERTIFICATE</h3>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-2">UNIVERSITY OF MORATUWA</p>
+              <div className="mt-auto">
+                <div className="w-16 h-1 bg-primary-500 mt-6 mb-4"></div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
+          >
+            <div className="flex flex-col h-full">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">G.C.E ADVANCED LEVEL</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">MARIS STELLA COLLEGE THIMBRIGASKATUWA</p>
+              <div className="mt-auto">
+                <div className="w-16 h-1 bg-primary-500 mt-6 mb-4"></div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
+          >
+            <div className="flex flex-col h-full">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">G.C.E ORDINARY LEVEL</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">ST JUDE'S COLLEGE NEGOMBO</p>
               <div className="mt-auto">
                 <div className="w-16 h-1 bg-primary-500 mt-6 mb-4"></div>
               </div>
