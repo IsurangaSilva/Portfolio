@@ -60,14 +60,15 @@ export function Header() {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
+        {/* Left logo section */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          className="w-24"
         >
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-sm md:text-base">IS</div>
-            <span className="font-bold text-xl md:text-2xl gradient-text">Isuranga</span>
           </Link>
         </motion.div>
 
@@ -76,14 +77,14 @@ export function Header() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="hidden md:flex items-center space-x-8"
+          className="hidden md:flex items-center justify-center flex-1"
         >
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-8 mx-auto">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative font-medium text-gray-700 hover:text-primary-600 dark:text-gray-200 dark:hover:text-primary-400 transition px-1 py-2 ${
+                className={`relative font-medium text-gray-700 hover:text-primary-600 dark:text-gray-200 dark:hover:text-primary-400 transition px-3 py-2 ${
                   isActive(item.href, item.sectionId) 
                     ? 'text-primary-600 dark:text-primary-400 after:content-[""] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-primary-500 after:to-secondary-500' 
                     : ''
@@ -93,21 +94,26 @@ export function Header() {
               </Link>
             ))}
           </div>
-          
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            
-            <Link
-              href="/documents/Isuranga 3.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
-            >
-              <FaFilePdf />
-              <span>Resume</span>
-            </Link>
-          </div>
         </motion.nav>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center space-x-4"
+        >
+          <ThemeToggle />
+            
+          <Link
+            href="/documents/Isuranga 3.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
+          >
+            <FaFilePdf />
+            <span>Resume</span>
+          </Link>
+        </motion.div>
 
         {/* Mobile Navigation Toggle */}
         <div className="flex items-center space-x-4 md:hidden">
