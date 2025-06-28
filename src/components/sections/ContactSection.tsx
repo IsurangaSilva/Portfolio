@@ -93,7 +93,7 @@ export function ContactSection() {
                     href="mailto:contact@isuranga.com" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition"
                   >
-                    contact@isuranga.com
+                    isurangasulakshana@gmail.com
                   </a>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export function ContactSection() {
                     href="tel:+1234567890" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition"
                   >
-                    +1 (234) 567-890
+                    078 577 5691
                   </a>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-medium text-lg">Location</h4>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Colombo, Sri Lanka
+                    Negombo , Sri Lanka
                   </p>
                 </div>
               </div>

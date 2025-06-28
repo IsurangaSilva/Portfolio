@@ -7,6 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { FaFilePdf } from 'react-icons/fa';
 
 const navItems = [
   { name: 'Home', href: '/', sectionId: 'home' },
@@ -97,12 +98,13 @@ export function Header() {
             <ThemeToggle />
             
             <Link
-              href="/resume.pdf"
+              href="/documents/Isuranga 3.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
             >
-              Resume
+              <FaFilePdf />
+              <span>Resume</span>
             </Link>
           </div>
         </motion.nav>
@@ -150,13 +152,14 @@ export function Header() {
               
               <div className="pt-2 border-t border-gray-200 dark:border-dark-300">
                 <Link
-                  href="/resume.pdf"
+                  href="/documents/Isuranga 3.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-block px-5 py-2 mt-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-5 py-2 mt-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white transition shadow-md hover:shadow-lg text-sm font-medium"
                 >
-                  View Resume
+                  <FaFilePdf />
+                  <span>View Resume</span>
                 </Link>
               </div>
             </nav>

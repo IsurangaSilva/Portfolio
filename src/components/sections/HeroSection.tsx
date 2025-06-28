@@ -1,13 +1,61 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { ParticleBackground } from '@/components/ui/ParticleBackground';
 
 export function HeroSection() {
+  // Animation for typing effect
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+  
+  const fullText = "Professional Web Developer";
+  
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex]);
+  
+  // Blinking cursor effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <section className="relative py-20 md:py-28 overflow-hidden min-h-screen flex items-center">
+      {/* Particle effect background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <ParticleBackground />
+      </div>
+      
       {/* Background elements */}
       <div className="absolute top-0 left-0 right-0 bottom-0 opacity-30 dark:opacity-20 pointer-events-none">
         {/* Main gradient blobs */}
@@ -26,29 +74,30 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
             className="order-2 lg:order-1"
           >
-            <div className="inline-block mb-3 px-4 py-1.5 rounded-full bg-primary-100/60 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium">
-              Welcome to my portfolio
-            </div>
+            <motion.div variants={itemVariants} className="inline-block mb-3 px-4 py-1.5 rounded-full bg-primary-100/60 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium">
+              <span className="animate-pulse-text">Welcome to my portfolio</span>
+            </motion.div>
             
-            <h1 className="heading-1 mb-4">
-              Hi, I&apos;m <span className="animated-gradient-text">Isuranga</span>
-            </h1>
+            <motion.h1 variants={itemVariants} className="heading-1 mb-4 whitespace-nowrap">
+              Hi, I&apos;m <span className="animated-gradient-text">Isuranga Silva</span>
+            </motion.h1>
             
-            <h2 className="text-2xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300 font-light">
-              Professional Web Developer
-            </h2>
+            <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300 font-light">
+              {displayText}
+              {showCursor && <span className="text-black dark:text-white">|</span>}
+            </motion.h2>
             
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed">
+            <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed">
               I design and develop beautiful, high-performance web applications with a focus on user 
               experience and modern technologies. <span className="text-black dark:text-white font-medium">Passionate about creating digital solutions that make a difference.</span>
-            </p>
+            </motion.p>
             
-            <div className="flex flex-wrap gap-4 mb-12">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-12">
               <Link 
                 href="/#projects"
                 className="group px-8 py-3 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-medium transition shadow-md hover:shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30 flex items-center gap-2"
@@ -67,17 +116,17 @@ export function HeroSection() {
                 </svg>
                 <span>Get In Touch</span>
               </Link>
-            </div>
+            </motion.div>
             
-            <div className="flex items-center gap-1 mt-10">
+            <motion.div variants={itemVariants} className="flex items-center gap-1 mt-10">
               <div className="h-px bg-gray-300 dark:bg-dark-500 w-12"></div>
               <span className="text-sm text-gray-500 dark:text-gray-400 px-4">Follow me on</span>
               <div className="h-px bg-gray-300 dark:bg-dark-500 w-12"></div>
-            </div>
+            </motion.div>
             
-            <div className="flex gap-5 mt-5">
+            <motion.div variants={itemVariants} className="flex gap-5 mt-5">
               <a 
-                href="https://github.com/isuranga" 
+                href="https://github.com/IsurangaSilva" 
                 target="_blank" 
                 rel="noreferrer"
                 className="p-3 rounded-full text-gray-700 hover:text-white dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-dark-300 hover:bg-primary-600 dark:hover:bg-primary-600 transition-all hover:-translate-y-1"
@@ -86,7 +135,7 @@ export function HeroSection() {
                 <span className="sr-only">GitHub</span>
               </a>
               <a 
-                href="https://linkedin.com/in/isuranga" 
+                href="https://www.linkedin.com/in/isuranga-silva/" 
                 target="_blank" 
                 rel="noreferrer"
                 className="p-3 rounded-full text-gray-700 hover:text-white dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-dark-300 hover:bg-primary-600 dark:hover:bg-primary-600 transition-all hover:-translate-y-1"
@@ -94,7 +143,7 @@ export function HeroSection() {
                 <FaLinkedin className="w-5 h-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-            </div>
+            </motion.div>
           </motion.div>
           
           {/* Image with tech orbit */}
@@ -104,7 +153,16 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="order-1 lg:order-2 flex justify-center"
           >
-            <div className="relative">
+            <motion.div 
+              animate={{ 
+                y: [0, -12, 0],
+              }} 
+              transition={{ 
+                repeat: Infinity, 
+                duration: 4,
+                ease: "easeInOut"
+              }} 
+              className="relative">
               {/* Main profile image */}
               <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-dark-400 shadow-xl glow">
                 <Image 
@@ -156,7 +214,7 @@ export function HeroSection() {
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm">TS</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
