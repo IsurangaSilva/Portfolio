@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/animations.css';
+@import '../styles/fallback.css';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #0ea5e9;
+  --secondary: #d946ef;
+  --accent: #f59e0b;
+  --card: #f9fafb;
+  --card-foreground: #1f2937;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+}
+
+.dark {
+  --background: #171717;
+  --foreground: #f9fafb;
+  --primary: #38bdf8;
+  --secondary: #f0abfc;
+  --accent: #fbbf24;
+  --card: #262626;
+  --card-foreground: #f3f4f6;
+  --border: #404040;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .heading-1 {
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+  }
+  
+  .heading-2 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+  
+  .heading-3 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent;
+  }
+}
