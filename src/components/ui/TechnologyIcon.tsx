@@ -12,12 +12,12 @@ interface TechnologyIconProps {
 
 // Map of technology names to their image paths
 const techImageMap: Record<string, string> = {
-  'React': '/images/tech/react.png',
-  'React.js': '/images/tech/react.png',
+  'React': '/images/tech/react.svg',
+  'React.js': '/images/tech/react.svg',
   'React Native': '/images/tech/native.png',
-  'Next.js': '/images/tech/nextjs.png',
-  'Tailwind': '/images/tech/tailwind.png',
-  'Tailwind CSS': '/images/tech/tailwind.png',
+  'Next.js': '/images/tech/next.svg',
+  'Tailwind': '/images/tech/tailwind.svg',
+  'Tailwind CSS': '/images/tech/tailwind.svg',
   'CSS/Tailwind': '/images/tech/tailwind.png',
   'TypeScript': '/images/tech/typescript.png',
   'Node.js': '/images/tech/node.png',
@@ -50,7 +50,16 @@ const techImageMap: Record<string, string> = {
   'Arduino IDE': '/images/tech/arduino.jpeg',
   '.NET': '/images/tech/c.png', // Using C image for .NET since specific one not found
   'Flutter': '/images/tech/draw.jpeg',
-  'Expo': '/images/tech/react.png' // Using React image for Expo since specific one not found
+  'Expo': '/images/tech/react.png', // Using React image for Expo since specific one not found
+  'Spring Boot': '/images/tech/java.png', // Using Java image for Spring Boot
+  'JWT': '/images/tech/restapi.png', // Using REST API image for JWT
+  'Material UI': '/images/tech/react.png', // Using React image for Material UI
+  'Material Design': '/images/tech/android.jpeg', // Using Android image for Material Design
+  'Framer Motion': '/images/tech/react.png', // Using React image for Framer Motion
+  'Prisma': '/images/tech/node.png', // Using Node.js image for Prisma
+  'PostgreSQL': '/images/tech/sql.png', // Using SQL image for PostgreSQL
+  'Redux': '/images/tech/react.png', // Using React image for Redux
+  'Google Maps API': '/images/tech/restapi.png' // Using REST API image for Google Maps API
 };
 
 const sizesMap = {

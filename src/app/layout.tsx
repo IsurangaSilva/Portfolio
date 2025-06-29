@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppThemeProvider } from "@/contexts/ThemeProvider";
 import "./globals.css";
@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#111827",
+};
 
 export const metadata: Metadata = {
   title: "Professional Portfolio | Web Development",
@@ -33,7 +37,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
-  themeColor: "#111827",
 };
 
 export default function RootLayout({
