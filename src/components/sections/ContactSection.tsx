@@ -78,7 +78,7 @@ export function ContactSection() {
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
                 Fill out the form or get in touch directly using the contact details below. 
-                I'm always open to discussing new projects, creative ideas or opportunities.
+                I am always open to discussing new projects, creative ideas or opportunities.
               </p>
             </div>
 
@@ -219,7 +219,7 @@ export function ContactSection() {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 rounded-lg"
                 >
-                  Thank you for your message! I'll get back to you as soon as possible.
+                  Thank you for your message! I will get back to you as soon as possible.
                 </motion.div>
               )}
               

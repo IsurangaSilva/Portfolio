@@ -1,5 +1,4 @@
 import { PersonalInfo, Achievement, Testimonial } from "@/types/portfolio";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 export const personalInfo: PersonalInfo = {
   name: "Isuranga",

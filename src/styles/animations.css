@@ -14,6 +14,29 @@
   animation: float 4s ease-in-out infinite;
 }
 
+/* Slow pulse animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom radial gradient for photo vignette effect */
+.bg-radial-gradient {
+  background: radial-gradient(
+    circle at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
 /* Glow effect */
 .glow {
   position: relative;

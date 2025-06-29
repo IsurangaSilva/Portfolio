@@ -1,8 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { ParticleBackground } from '@/components/ui/ParticleBackground';
@@ -18,215 +17,270 @@ export function HeroSection() {
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText(prevText => prevText + fullText[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
       }, 100);
+      
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, fullText]);
   
-  // Blinking cursor effect
+  // Cursor blinking effect
   useEffect(() => {
     const interval = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 500);
+    
     return () => clearInterval(interval);
   }, []);
 
-  // Variants for staggered animations
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
+  // Using direct animation values instead of variants
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden min-h-screen flex items-center">
-      {/* Particle effect background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section className="relative h-screen flex items-center">
+      {/* Animated background with particles */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <ParticleBackground />
-      </div>
-      
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 opacity-30 dark:opacity-20 pointer-events-none">
-        {/* Main gradient blobs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/20 dark:bg-secondary-500/10 rounded-full filter blur-3xl animate-float" />
-        
-        {/* Additional visual elements */}
-        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-accent/30 rounded-full filter blur-xl animate-spin-slow" />
-        <div className="absolute bottom-1/3 left-2/3 w-32 h-32 bg-primary-300/20 dark:bg-primary-700/20 rounded-full filter blur-xl" />
-        
-        {/* Grid background for texture */}
-        <div className="absolute inset-0 grid-bg opacity-20"></div>
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* Content */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-            className="order-2 lg:order-1"
-          >
-            <motion.div variants={itemVariants} className="inline-block mb-3 px-4 py-1.5 rounded-full bg-primary-100/60 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium">
-              <span className="animate-pulse-text">Welcome to my portfolio</span>
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+                Hi, I&apos;m <span className="gradient-text">Isuranga Silva</span>
+              </h1>
+              
+              <div className="h-12 mb-5">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200 flex">
+                  <span>{displayText}</span>
+                  <span className={`ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100 inline-block w-2 h-8 bg-primary-500`}></span>
+                </h2>
+              </div>
+              
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+                Passionate about crafting responsive and user-friendly web experiences using modern technologies. 
+                Currently pursuing my Bachelor&apos;s degree in Information Technology.
+              </p>
+              
+              <div className="mt-8 flex items-center gap-4">
+                <a 
+                  href="https://github.com/IsurangaSilva" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition"
+                >
+                  <FaGithub className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/isuranga-silva/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition"
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://research-website-henna.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Research Website"
+                  className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition flex items-center gap-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                  <span className="hidden sm:inline text-sm">Research</span>
+                </a>
+              </div>
             </motion.div>
-            
-            <motion.h1 variants={itemVariants} className="heading-1 mb-4 whitespace-nowrap">
-              Hi, I&apos;m <span className="animated-gradient-text">Isuranga Silva</span>
-            </motion.h1>
-            
-            <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300 font-light">
-              {displayText}
-              {showCursor && <span className="text-black dark:text-white">|</span>}
-            </motion.h2>
-            
-            <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed">
-              I am a passionate and motivated IT undergraduate with specialized skills in web development. 
-              <span className="text-black dark:text-white font-medium"> Constantly expanding my knowledge and expertise in the IT field, especially in creating solutions that make a difference.</span>
-            </motion.p>
-            
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-12">
-              <Link 
-                href="/#projects"
-                className="group px-8 py-3 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-medium transition shadow-md hover:shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30 flex items-center gap-2"
-              >
-                <span>View My Work</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-              <Link
-                href="/#contact"
-                className="px-8 py-3 rounded-lg bg-white dark:bg-dark-300 hover:bg-gray-100 dark:hover:bg-dark-400 text-gray-800 dark:text-gray-200 font-medium transition shadow-md hover:shadow-lg border border-gray-200 dark:border-dark-500 flex items-center gap-2"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>Get In Touch</span>
-              </Link>
-            </motion.div>
-            
-            <motion.div variants={itemVariants} className="flex items-center gap-1 mt-10">
-              <div className="h-px bg-gray-300 dark:bg-dark-500 w-12"></div>
-              <span className="text-sm text-gray-500 dark:text-gray-400 px-4">Follow me on</span>
-              <div className="h-px bg-gray-300 dark:bg-dark-500 w-12"></div>
-            </motion.div>
-            
-            <motion.div variants={itemVariants} className="flex gap-5 mt-5">
-              <a 
-                href="https://github.com/IsurangaSilva" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-3 rounded-full text-gray-700 hover:text-white dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-dark-300 hover:bg-primary-600 dark:hover:bg-primary-600 transition-all hover:-translate-y-1"
-              >
-                <FaGithub className="w-5 h-5" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/isuranga-silva/" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-3 rounded-full text-gray-700 hover:text-white dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-dark-300 hover:bg-primary-600 dark:hover:bg-primary-600 transition-all hover:-translate-y-1"
-              >
-                <FaLinkedin className="w-5 h-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a 
-                href="https://research-website-henna.vercel.app/" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-3 rounded-full text-gray-700 hover:text-white dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-dark-300 hover:bg-primary-600 dark:hover:bg-primary-600 transition-all hover:-translate-y-1"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-                <span className="sr-only">Research Website</span>
-              </a>
-            </motion.div>
-          </motion.div>
+          </div>
           
-          {/* Image with tech orbit */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 flex justify-center"
-          >
-            <motion.div 
-              animate={{ 
-                y: [0, -12, 0],
-              }} 
-              transition={{ 
-                repeat: Infinity, 
-                duration: 4,
-                ease: "easeInOut"
-              }} 
-              className="relative">
-              {/* Main profile image */}
-              <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-dark-400 shadow-xl glow">
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ 
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                transition: { duration: 0.5, type: "spring", stiffness: 300 }
+              }}
+              transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
+              className="relative w-80 h-80 md:w-[450px] md:h-[450px] lg:w-[480px] lg:h-[480px] rounded-full flex items-center justify-center"
+            >
+              {/* Professional animated gradient background */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500"
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  backgroundSize: ["200% 200%", "150% 150%", "200% 200%"],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+              {/* Animated gradient border */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-secondary-500 via-primary-500 to-secondary-500 opacity-70"
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                }}
+                transition={{ 
+                  duration: 15, 
+                  ease: "linear", 
+                  repeat: Infinity 
+                }}
+                style={{
+                  backgroundSize: "200% 200%"
+                }}
+              />
+              
+              {/* Enhanced professional glow effect */}
+              <motion.div
+                className="absolute -inset-5 rounded-full opacity-20 blur-xl"
+                animate={{ 
+                  background: [
+                    'radial-gradient(circle, rgba(79,70,229,0.4) 0%, rgba(0,0,0,0) 70%)',
+                    'radial-gradient(circle, rgba(124,58,237,0.4) 0%, rgba(0,0,0,0) 70%)',
+                    'radial-gradient(circle, rgba(79,70,229,0.4) 0%, rgba(0,0,0,0) 70%)'
+                  ],
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{ 
+                  background: { duration: 8, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                }}
+              />
+              
+              {/* Enhanced profile image with professional animations */}
+              <motion.div 
+                className="absolute w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-full overflow-hidden bg-white dark:bg-gray-900 border-[5px] border-white dark:border-gray-800"
+                whileHover={{ 
+                  scale: 1.03,
+                  transition: { duration: 0.4, type: "spring", stiffness: 150 }
+                }}
+                animate={{ 
+                  boxShadow: [
+                    "0 0 0 rgba(0, 0, 0, 0.1)", 
+                    "0 10px 30px rgba(0, 0, 0, 0.15)", 
+                    "0 0 0 rgba(0, 0, 0, 0.1)"
+                  ]
+                }}
+                transition={{ 
+                  boxShadow: { duration: 8, repeat: Infinity, ease: "easeInOut" } 
+                }}
+              >
+                {/* Inner border with gradient animation */}
+                <motion.div 
+                  className="absolute inset-1 rounded-full border-2 border-primary-300/40 dark:border-primary-600/30 z-10"
+                  animate={{ 
+                    borderColor: ["rgba(147, 197, 253, 0.4)", "rgba(59, 130, 246, 0.4)", "rgba(147, 197, 253, 0.4)"]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                />
+              
                 <Image 
-                  src="/images/image.png" 
-                  alt="Isuranga - Professional Web Developer"
+                  src="/images/image.png"
+                  alt="Isuranga Silva"
                   fill
-                  className="object-cover"
+                  className="object-cover scale-[1.02]"
                   priority
                 />
                 
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 dark:bg-yellow-600 rounded-full shadow-lg animate-float"></div>
-                <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-blue-400 dark:bg-blue-600 rounded-full shadow-lg animate-pulse-slow"></div>
-              </div>
+                {/* Professional overlay animation with better gradient */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/10"
+                  animate={{ 
+                    opacity: [0.3, 0.5, 0.3],
+                    backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"]
+                  }}
+                  transition={{ 
+                    opacity: { duration: 7, repeat: Infinity, ease: "easeInOut" },
+                    backgroundPosition: { duration: 15, repeat: Infinity, ease: "linear" }
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                />
+                
+                {/* Subtle vignette effect for depth */}
+                <div className="absolute inset-0 bg-radial-gradient pointer-events-none"></div>
+              </motion.div>
               
-              {/* Orbiting tech icons */}
-              <div className="absolute inset-0 -m-12 md:-m-24 animate-spin-slow">
-                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white dark:bg-dark-300 p-2 md:p-3 rounded-full shadow-lg">
-                  <div className="relative w-6 h-6 md:w-8 md:h-8 overflow-hidden">
-                    <Image 
-                      src="/images/tech/react.svg" 
-                      alt="React"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark-300 p-2 md:p-3 rounded-full shadow-lg">
-                  <div className="relative w-6 h-6 md:w-8 md:h-8 overflow-hidden">
-                    <Image 
-                      src="/images/tech/next.svg" 
-                      alt="Next.js"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white dark:bg-dark-300 p-2 md:p-3 rounded-full shadow-lg">
-                  <div className="relative w-6 h-6 md:w-8 md:h-8 overflow-hidden">
-                    <Image 
-                      src="/images/tech/tailwind.svg" 
-                      alt="Tailwind CSS"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark-300 p-2 md:p-3 rounded-full shadow-lg">
-                  <div className="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm">TS</div>
-                </div>
+              {/* Professional animated accent elements */}
+              <motion.div 
+                className="absolute w-full h-full rounded-full"
+                animate={{ rotate: [0, 360] }}
+                transition={{ 
+                  duration: 60, 
+                  repeat: Infinity, 
+                  ease: "linear"
+                }}
+              >
+                {/* Accent circles */}
+                <motion.div 
+                  className="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full bg-primary-500 opacity-70"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div 
+                  className="absolute -bottom-3 right-10 w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-secondary-500 opacity-60"
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                />
+                <motion.div 
+                  className="absolute top-10 -left-2 w-5 h-5 md:w-7 md:h-7 lg:w-9 lg:h-9 rounded-full bg-primary-400 opacity-50"
+                  animate={{ scale: [1, 1.4, 1] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                />
+              </motion.div>
+            </motion.div>
+            
+            {/* Floating pulse element with enhanced effects */}
+            <motion.div
+              className="absolute -bottom-4 -right-4 w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40"
+              animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
+              transition={{ 
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center">
+                <motion.div 
+                  className="absolute w-full h-full rounded-full bg-gradient-to-r from-secondary-500 to-primary-500"
+                  animate={{ 
+                    opacity: [0.6, 0.8, 0.6],
+                    scale: [1, 1.05, 1],
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                  }}
+                  transition={{ 
+                    opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                    scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+                    backgroundPosition: { duration: 10, repeat: Infinity, ease: "linear" }
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                />
+                <motion.div
+                  className="absolute w-full h-full rounded-full bg-white/10 backdrop-blur-sm"
+                  animate={{ scale: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div 
+                  className="relative z-10 text-white font-bold text-sm md:text-base p-2 text-center bg-gradient-to-br from-transparent to-black/10 backdrop-blur-sm rounded-full"
+                  animate={{ textShadow: ["0 0 8px rgba(255,255,255,0.5)", "0 0 16px rgba(255,255,255,0.8)", "0 0 8px rgba(255,255,255,0.5)"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <p className="animate-float">Full Stack</p>
+                  <p className="animate-float">Developer</p>
+                </motion.div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

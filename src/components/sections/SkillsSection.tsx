@@ -165,7 +165,7 @@ export function SkillsSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-gray-600 dark:text-gray-400"
             >
-              Technologies I've learned and applied in my projects
+              Technologies I&apos;ve learned and applied in my projects
             </motion.p>
           </motion.div>
         </motion.div>
@@ -296,7 +296,7 @@ export function SkillsSection() {
                   transition={{ delay: 0.5, duration: 1 }}
                   className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"
                 />
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">BACHELOR'S INFORMATION TECHNOLOGY</h3>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">BACHELOR&apos;S INFORMATION TECHNOLOGY</h3>
                 <p className="text-primary-600 dark:text-primary-400 font-semibold">(2021 - PRESENT)</p>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-2">Sri Lanka Institute of Information Technology</p>
@@ -459,7 +459,7 @@ export function SkillsSection() {
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="text-gray-600 dark:text-gray-400 mb-2"
               >
-                ST JUDE'S COLLEGE NEGOMBO
+                ST JUDE&apos;S COLLEGE NEGOMBO
               </motion.p>
               <div className="mt-auto">
                 <motion.div 
