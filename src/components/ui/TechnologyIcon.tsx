@@ -15,7 +15,7 @@ const techImageMap: Record<string, string> = {
   'React': '/images/tech/react.png',
   'React.js': '/images/tech/react.png',
   'React Native': '/images/tech/native.png',
-  'Next.js': '/images/tech/next.png',
+  'Next.js': '/images/tech/nextjs.png',
   'Tailwind': '/images/tech/tailwind.png',
   'Tailwind CSS': '/images/tech/tailwind.png',
   'CSS/Tailwind': '/images/tech/tailwind.png',

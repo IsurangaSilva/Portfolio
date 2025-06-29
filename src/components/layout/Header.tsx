@@ -102,6 +102,7 @@ export function Header() {
           transition={{ duration: 0.5 }}
           className="flex items-center space-x-4"
         >
+          {/* Theme toggle visible on all screen sizes */}
           <ThemeToggle />
             
           <Link
@@ -115,9 +116,8 @@ export function Header() {
           </Link>
         </motion.div>
 
-        {/* Mobile Navigation Toggle */}
-        <div className="flex items-center space-x-4 md:hidden">
-          <ThemeToggle />
+        {/* Mobile Navigation Toggle - removed duplicate ThemeToggle */}
+        <div className="flex items-center md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 rounded-full bg-gray-100 dark:bg-dark-300 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-dark-400 transition-colors"
