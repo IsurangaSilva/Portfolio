@@ -16,13 +16,14 @@ export const skills: SkillCategory[] = [
     advanced: [
       { name: 'React.js', level: 85 },
       { name: 'Next.js', level: 80 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'CSS/Tailwind', level: 80 }
+      { name: 'HTML5', level: 85 },
+      { name: 'JavaScript', level: 80 },
+      { name: 'CSS/Tailwind', level: 85 }
     ]
   },
   {
     name: 'Backend',
-    items: ['Node.js', 'Express.js', 'Java', 'C#', '.NET', 'RESTful APIs', 'PHP'],
+    items: ['Node.js', 'Express.js', 'Java', 'C++', 'RESTful APIs', 'PHP'],
     advanced: [
       { name: 'Node.js', level: 80 },
       { name: 'Express.js', level: 75 },
@@ -32,7 +33,7 @@ export const skills: SkillCategory[] = [
   },
   {
     name: 'Databases',
-    items: ['MongoDB', 'MySQL', 'Firebase', 'SQL Server', 'NoSQL'],
+    items: ['MongoDB', 'MySQL', 'Firebase', 'NoSQL'],
     advanced: [
       { name: 'MongoDB', level: 80 },
       { name: 'MySQL', level: 75 }
@@ -40,18 +41,14 @@ export const skills: SkillCategory[] = [
   },
   {
     name: 'Mobile Development',
-    items: ['React Native', 'Flutter', 'Android Studio', 'Expo'],
+    items: ['React Native', 'Kotlin', 'Android Studio'],
     advanced: [
       { name: 'React Native', level: 70 },
-      { name: 'Flutter', level: 65 }
+      { name: 'Kotlin', level: 65 }
     ]
   },
   {
     name: 'Tools',
     items: ['VS Code', 'Git', 'GitHub', 'Azure DevOps', 'Postman', 'Figma', 'Arduino IDE'],
-  },
-  {
-    name: 'Languages',
-    items: ['English', 'Sinhala', 'Tamil (Basic)'],
   }
 ];

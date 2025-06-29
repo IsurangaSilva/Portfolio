@@ -235,53 +235,6 @@ export function ContactSection() {
             </form>
           </motion.div>
         </div>
-
-        {/* References Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mt-24 mb-12"
-        >
-          <h2 className="heading-2 mb-4">References</h2>
-          <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Professional references available upon request
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
-          >
-            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Mr. Thusithanjana Thilakarathne</h3>
-            <p className="text-primary-600 dark:text-primary-400 font-semibold mb-2">LIC ( SLIIT ) - App Development</p>
-            <div className="space-y-2 mt-4 text-gray-600 dark:text-gray-400">
-              <p>Phone: + 94 11 754 3999</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white dark:bg-dark-300 rounded-xl p-8 shadow-lg"
-          >
-            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">Prof. Koliya Pulasinghe</h3>
-            <p className="text-primary-600 dark:text-primary-400 font-semibold mb-2">Senior Professor</p>
-            <div className="space-y-2 mt-4 text-gray-600 dark:text-gray-400">
-              <p>Faculty Of Computing Information Technology</p>
-              <p>Phone: + 94 11 754 4105</p>
-              <p>Email: koliya.p@sliit.lk</p>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );

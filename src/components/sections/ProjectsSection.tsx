@@ -6,11 +6,9 @@ import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '@/data/projects';
 import { TechnologyIcon } from '@/components/ui/TechnologyIcon';
-import { ProjectStats } from '@/components/ui/ProjectStats';
 
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [activeProject, setActiveProject] = useState<number | null>(null);
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
@@ -72,23 +70,9 @@ export function ProjectsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-white dark:bg-dark-300 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
-              onMouseEnter={() => setActiveProject(project.id)}
-              onMouseLeave={() => setActiveProject(null)}
             >
               {/* Project Image */}
               <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-dark-400">
-                {project.category === 'academic' && project.id <= 4 && (
-                  <div className="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 z-10">
-                    {project.id === 1 ? '1st Year' : 
-                     project.id === 2 ? '2nd Year' : 
-                     project.id === 3 ? '3rd Year' : '4th Year'}
-                  </div>
-                )}
-                {project.category === 'research' && (
-                  <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 z-10">
-                    2024 - Present
-                  </div>
-                )}
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
@@ -148,19 +132,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Project Stats */}
-                {project.stats && activeProject === project.id && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-4"
-                  >
-                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Metrics</h4>
-                    <ProjectStats projectStats={project.stats} />
-                  </motion.div>
-                )}
+                {/* Project Stats Removed */}
               </div>
             </motion.div>
           ))}
