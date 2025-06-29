@@ -12,12 +12,12 @@ interface TechnologyIconProps {
 
 // Map of technology names to their image paths
 const techImageMap: Record<string, string> = {
-  'React': '/images/tech/react.svg',
-  'React.js': '/images/tech/react.svg',
+  'React': '/images/tech/react.png',
+  'React.js': '/images/tech/react.png',
   'React Native': '/images/tech/native.png',
-  'Next.js': '/images/tech/next.svg',
-  'Tailwind': '/images/tech/tailwind.svg',
-  'Tailwind CSS': '/images/tech/tailwind.svg',
+  'Next.js': '/images/tech/next.png',
+  'Tailwind': '/images/tech/tailwind.png',
+  'Tailwind CSS': '/images/tech/tailwind.png',
   'CSS/Tailwind': '/images/tech/tailwind.png',
   'TypeScript': '/images/tech/typescript.png',
   'Node.js': '/images/tech/node.png',

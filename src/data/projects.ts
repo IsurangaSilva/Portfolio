@@ -26,7 +26,7 @@ export const projects: Project[] = [
     category: 'research',
     technologies: ['AI/ML', 'Large Language Models', 'Healthcare Analytics', 'Voice Technology'],
     github: 'https://github.com/IsurangaSilva/Advancements-in-Digital-Healthcare-Technologies',
-    imageUrl: '/images/projects/ecommerce.svg'
+    imageUrl: '/images/projects/s7.png'
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     category: 'mobile',
     technologies: ['Kotlin', 'Firebase', 'Android Studio', 'Material Design'],
     github: 'https://github.com/IsurangaSilva/Job-Application',
-    imageUrl: '/images/projects/task-management.svg'
+    imageUrl: '/images/projects/s5.jpeg'
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     category: 'web',
     technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Material UI', 'RESTful APIs'],
     github: 'https://github.com/EWIS-ECTC-KANDY/CADD-NEW-SYSTEM',
-    imageUrl: '/images/projects/smart-home.svg'
+    imageUrl: '/images/projects/s4.jpg'
   },
   {
     id: 6,
@@ -72,6 +72,6 @@ export const projects: Project[] = [
     category: 'web',
     technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Redux', 'Google Maps API', 'JWT'],
     github: 'https://github.com/IsurangaSilva/Travel-Planning-System',
-    imageUrl: '/images/projects/task-management.svg'
+    imageUrl: '/images/projects/s6.jpg'
   }
 ];
